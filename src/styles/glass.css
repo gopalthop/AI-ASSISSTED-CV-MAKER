@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: white;
+}
+
+.builder {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GLASS CARD */
+.glass-card {
+  width: 400px;
+  padding: 30px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* STEPPER */
+.stepper {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stepper div {
+  opacity: 0.5;
+}
+
+.stepper .active {
+  font-weight: bold;
+  opacity: 1;
+}
+
+/* BUTTONS */
+.nav-buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}

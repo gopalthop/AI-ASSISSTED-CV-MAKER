@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { motion } from "framer-motion";
+import Home from "./pages/Home";
+import Builder from "./pages/Builder";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {/* Wrapping the entire view in a motion.div ensures 
+        a smooth fade-in when the app first loads.
+      */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        style={{ minHeight: "100vh" }} // Ensures the animation covers the screen
+      >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/builder" element={<Builder />} />
+        </Routes>
+      </motion.div>
+    </BrowserRouter>
   );
 }
 
