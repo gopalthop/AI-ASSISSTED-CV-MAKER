@@ -21,6 +21,8 @@ export default function Builder() {
   const [cvData, setCvData] = useState({
     userType: "",
     template: "",
+     theme: "blue",        // ✅ ADD THIS
+  profileImage: "",     // ✅ ADD THIS
     name: "",
     email: "",
     phone: "",
@@ -31,12 +33,27 @@ export default function Builder() {
   console.log("Template selected:", cvData.template);
 
   // 📄 PDF Download
-  const downloadPDF = () => {
-    const element = document.getElementById("cv-preview");
-    if (element) {
-      html2pdf().from(element).save("cv.pdf");
-    }
-  };
+ const downloadPDF = () => {
+  const element = document.getElementById("cv-preview");
+
+  if (!element) return;
+
+  html2pdf()
+    .set({
+      margin: 0,
+      filename: "cv.pdf",
+      html2canvas: {
+        scale: 2,
+      },
+      jsPDF: {
+        unit: "px",
+        format: [794, 1123], // A4 size
+        orientation: "portrait",
+      },
+    })
+    .from(element)
+    .save();
+};
 
   // 🧠 Dynamic Steps (SAFE VERSION)
   const getDynamicSteps = () => {

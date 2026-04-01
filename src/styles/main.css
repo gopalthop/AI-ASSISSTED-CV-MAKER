@@ -25,6 +25,7 @@
   background: #6c63ff;
   color: white;
   text-decoration: none;
+  overflow-y: auto;
 }
 body {
   margin: 0;
@@ -35,7 +36,8 @@ body {
 
 /* MAIN BUILDER LAYOUT */
 .builder {
-  height: 100vh;
+   min-height: 100vh;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -265,4 +267,57 @@ input:focus, textarea:focus {
 .template.minimal {
   font-family: sans-serif;
   color: gray;
+}
+/* A4 PAGE */
+.a4-page {
+  width: 794px;        /* A4 width */
+  min-height: 1123px;  /* A4 height */
+  margin: auto;
+  background: white;
+  padding: 40px;
+  box-sizing: border-box;
+   margin-top: 20px;
+  margin-bottom: 20px;
+   transform: scale(0.9);
+  transform-origin: top center;
+}
+
+/* CENTER IN SCREEN */
+#cv-preview {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  margin-top: 20px;
+}
+
+/* TEMPLATE BASE */
+.template {
+  width: 100%;
+}
+.modern-layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 30%;
+  background: #dfe8c9;
+  padding: 20px;
+}
+
+.main {
+  width: 70%;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
 }

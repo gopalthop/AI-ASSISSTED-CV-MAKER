@@ -1,6 +1,6 @@
-import TemplateOne from "./TemplateOne";
-import TemplateTwo from "./TemplateTwo";
-import TemplateThree from "./TemplateThree";
+import TemplateOne from "./TemplateMinimal";
+import TemplateTwo from "./TemplateClassic";
+import TemplateThree from "./TemplateModern";
 
 export default function Preview({ cvData }) {
 
